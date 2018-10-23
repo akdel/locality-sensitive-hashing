@@ -49,13 +49,13 @@ class LSH:
 
 
 class VecorsInLSH(Vectors, LSH):
-    def __init__(self, length, signals):
+    def __init__(self, length, signals, custom_table=None):
         try:
             assert np.log2(length) % 1 == 0.0
         except AssertionError:
             raise AssertionError("Bits shifted due to bad length. Use powers of 2.")
         Vectors.__init__(self, signals)
-        LSH.__init__(self, length, self.vectors.shape[1])
+        LSH.__init__(self, length, self.vectors.shape[1], custom_table=custom_table)
         self.search_results = self.search_signals(self.vectors)
         self.search_results = self.search_results.view("|S%s" % self.search_results.shape[1]).flatten()
         self.bin_ids_used, self.bin_counts = np.unique(self.search_results, return_counts=True)
