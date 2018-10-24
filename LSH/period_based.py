@@ -11,8 +11,8 @@ class Periods:
 
 
 def coordinates_to_periods(coordinates):
-    c1 = np.array(coordinates[1:])
-    c2 = np.array(coordinates[:-1])
+    c1 = np.array(coordinates[:-1])
+    c2 = np.array(coordinates[1:])
     return c2 - c1
 
 def multiple_coordinates_to_periods(multiple_coordinates, max_len=100):
