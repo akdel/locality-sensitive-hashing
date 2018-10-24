@@ -70,7 +70,6 @@ class VecorsInLSH(Vectors, LSH):
         return np.where(self.search_results == bin_id)[0]
 
 
-
 if __name__ == "__main__":
     list_of_signals = np.arange(200000).reshape(200, -1).astype(float)
     list_of_signals[:100] = np.sin(np.deg2rad(list_of_signals[:100]))
