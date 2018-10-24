@@ -1,4 +1,4 @@
-from LSH.LSH.numba_helpers import *
+from LSH.numba_helpers import *
 
 
 
