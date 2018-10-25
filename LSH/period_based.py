@@ -7,7 +7,7 @@ class Periods:
         self.bin_array = np.array(list(bin_list), dtype=np.float64)
         self.periods = multiple_coordinates_to_periods(list_of_coords, max_len=max_period_len)
 
-        self.vectors = np.zeros((len(list_of_coords), bin_list.shape[0] - 1))
+        self.vectors = np.zeros((len(list_of_coords), self.bin_array.shape[0] - 1))
         self._fill_vectors()
 
     def _fill_vectors(self):
