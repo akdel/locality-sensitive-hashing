@@ -13,8 +13,7 @@ class Periods:
 
 def periods_to_hash_buckets(list_of_coords, number_of_buckets, max_period_len=100):
     p = Periods(list_of_coords, max_period_len=max_period_len)
-    periods = p.periods
-    return VecorsInLSH(number_of_buckets, periods)
+    return VecorsInLSH(number_of_buckets, p.vectors)
 
 
 def coordinates_to_periods(coordinates):
