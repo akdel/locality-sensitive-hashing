@@ -6,9 +6,17 @@ class Periods:
     def __init__(self, list_of_coords, bin_list=(0, 0.001, 3, 6, 9, 12, 18, 25, 35), max_period_len=25):
         self.bin_array = np.array(list(bin_list), dtype=np.float64)
         self.periods = multiple_coordinates_to_periods(list_of_coords, max_len=max_period_len)
-        self.vectors, self.ranges = np.histogram(self.periods, bins=self.bin_array)
-        self.vectors = self.vectors[1:]
-        self.ranges = self.ranges[1:]
+
+        self.vectors = np.zeros((len(list_of_coords), bin_list.shape[0] - 1))
+        self._fill_vectors()
+
+    def _fill_vectors(self):
+        for i in range(self.periods.shape[0]):
+            p = self.periods[i]
+            v, r = np.histogram(p, bins=self.bin_array)
+            self.vectors[i] = v[1:]
+
+
 
 
 def periods_to_hash_buckets(list_of_coords, number_of_buckets, max_period_len=100):
@@ -29,6 +37,7 @@ def multiple_coordinates_to_periods(multiple_coordinates, max_len=100):
         shape = periods.shape[0]
         res[i,:shape] = periods
     return res
+
 
 
 if __name__ == "__main__":
