@@ -48,7 +48,7 @@ class LSH:
         return np.packbits(res.astype(np.bool)).reshape((signals.shape[0], -1)).view("uint8")
 
 
-class VecorsInLSH(Vectors, LSH):
+class VectorsInLSH(Vectors, LSH):
     def __init__(self, length, signals, custom_table=None):
         try:
             assert np.log2(length) % 1 == 0.0
