@@ -5,6 +5,7 @@ setup(name='Simple-LSH',
       description='Python Distribution Utilities',
       author='Mehmet Akdel',
       author_email='akdel.mehmet@gmail.com',
-      url='',
+      url='https://github.com/akdel/local-sensitivity-hashing',
       packages=['LSH'],
+      install_requires=["numpy", "numba"]
      )
