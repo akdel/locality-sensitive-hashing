@@ -20,6 +20,6 @@ print(lsh.search_results)
 
 This gives us, `array([b'+', b'+', b'M', b'\xf4', b'm', b'm'], dtype='|S1')`.
 As expected, the first two signals and the last two signals are put in the same bins.
-In this example, the maximum number of bin hashes are 512, each using 8 bits.
+In this example, the maximum number of bin hashes are 256, each using 8 bits.
 Number of bits used can be changed to change the specificity of each bin.
 For simplicity, the number of bits can only be more than or equal to 8 and powers of 2.
