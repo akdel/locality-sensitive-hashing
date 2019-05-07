@@ -1,4 +1,4 @@
-## Local sensitivity hashing
+## Locality sensitive hashing
 
 * Implements lsh with numba + numpy.
 
