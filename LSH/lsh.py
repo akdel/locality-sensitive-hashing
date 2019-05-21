@@ -23,7 +23,7 @@ class LSH:
     def __init__(self, length, dimensions, custom_table=None):
         self.length = length
         self.dim = dimensions
-        if not custom_table:
+        if custom_table is None:
             self.table = create_random_vectors(length, dimensions)
         else:
             self.table = None
@@ -75,7 +75,7 @@ if __name__ == "__main__":
     list_of_signals[:100] = np.sin(np.deg2rad(list_of_signals[:100]))
     list_of_signals[100:120] *= -1
     list_of_signals[120:170] *= 0.0001
-    lsh = VecorsInLSH(32, list_of_signals)
+    lsh = VectorsInLSH(32, list_of_signals)
 
     print(len(list_of_signals))
     print("search results: ", lsh.search_results, "\nbin counts: ", lsh.bin_counts)
