@@ -23,3 +23,4 @@ As expected, the first two signals and the last two signals are put in the same 
 In this example, the maximum number of bin hashes are 256, each using 8 bits.
 Number of bits used can be changed to change the specificity of each bin.
 For simplicity, the number of bits can only be more than or equal to 8 and powers of 2.
+a
