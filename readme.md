@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/akdel/locality-sensitive-hashing/badge.svg?branch=master)](https://coveralls.io/github/akdel/locality-sensitive-hashing?branch=master)
+
 ## Locality sensitive hashing
 
 * Implements lsh with numba + numpy.
