@@ -35,9 +35,9 @@ class LSH:
             assert custom_table.shape[0] == self.length
         except AssertionError:
             raise AssertionError("Either the dimensions or the length does not match the given table shape.")
-        self.table = np.zeros((self.length, self.dim), dtype=np.float64)
-        for i in range(custom_table.shape[0]):
-            self.table[i] = custom_table[i] - np.mean(custom_table[i])
+        self.table = custom_table.copy()
+       # for i in range(custom_table.shape[0]):
+       #     self.table[i] = custom_table[i] - np.mean(custom_table[i])
 
     def search_signal(self, signal):
         return np.packbits(vector_score(signal, self.table).astype(np.bool)).view("uint8")
