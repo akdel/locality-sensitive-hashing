@@ -51,7 +51,7 @@ class LSH:
 class VectorsInLSH(Vectors, LSH):
     def __init__(self, length, signals, custom_table=None):
         try:
-            assert np.log2(length) % 1 == 0.0
+            assert length % 8 == 0.0
         except AssertionError:
             raise AssertionError("Bits shifted due to bad length. Use powers of 2.")
         Vectors.__init__(self, signals)
