@@ -53,7 +53,7 @@ class VectorsInLSH(Vectors, LSH):
         try:
             assert length % 8 == 0.0
         except AssertionError:
-            raise AssertionError("Bits shifted due to bad length. Use powers of 2.")
+            raise AssertionError("Use multiples of 8 bits.")
         Vectors.__init__(self, signals)
         LSH.__init__(self, length, self.vectors.shape[1], custom_table=custom_table)
         self.search_results = self.search_signals(self.vectors)
